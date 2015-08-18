@@ -4,13 +4,13 @@
   <arg name="bumblebee_serial" default="10405895" />
   <arg name="calibrated" default="1" />
 
-  <group ns="camera">
+  <group ns="bb">
     <node pkg="nodelet" type="nodelet" name="bumblebee_nodelet_manager" args="manager" />
 
     <node pkg="nodelet" type="nodelet" name="bumblebee_nodelet"
           args="load pointgrey_camera_driver/PointGreyStereoCameraNodelet bumblebee_nodelet_manager" >
-      <param name="frame_id" value="bumblebee" />
-      <!--frame_rate = {25, 38, 60}-->
+      <!--<param name="frame_id" value="bumblebee" />-->
+      <!--frame_rate = {15, 25, 38, 60}-->
       <param name="frame_rate" value="15" />
       <param name="first_namespace" value="left" />
       <param name="second_namespace" value="right" />
