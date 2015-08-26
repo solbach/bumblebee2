@@ -1,10 +1,17 @@
 <launch>
   <!-- Determine this using rosrun pointgrey_camera_driver list_cameras.
        If not specified, defaults to first camera found. -->
+
+  <!-- ESCI'S Cam -->
+  <!--
   <arg name="bumblebee_serial" default="10405895" />
+  -->
+  <!-- Pioneer3 -->
+  <arg name="bumblebee_serial" default="11170096" />
+
   <arg name="calibrated" default="1" />
 
-  <group ns="bb">
+  <group ns="camera">
     <node pkg="nodelet" type="nodelet" name="bumblebee_nodelet_manager" args="manager" />
 
     <node pkg="nodelet" type="nodelet" name="bumblebee_nodelet"
